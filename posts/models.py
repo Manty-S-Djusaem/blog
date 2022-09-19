@@ -1,3 +1,5 @@
+from statistics import mode
+from turtle import title
 from django.db import models
 
 # Create your models here.
@@ -12,6 +14,13 @@ POST_TYPE_CHOICES = (
 
 
 class Post(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    date = models.DateField(auto_now_add=True, blank=True, null=True)
+    stars = models.IntegerField(null=True)
+    type = models.IntegerField(choices=POST_TYPE_CHOICES, null=True)
+
+class Comment(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     date = models.DateField(auto_now_add=True, blank=True, null=True)
