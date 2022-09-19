@@ -60,13 +60,14 @@
     {% for post in posts %}
         <div style="text-align: center; height: 150px; width: 300px;">
             {% if post.stars > 2 %}
-                <h3 style="color: green">{{ post.title }}</h3>
+                <h3 style="color: crimson">{{ post.title }}</h3>
             {% else %}
                 <h3 style="color: red">{{ post.title }}</h3>
             {% endif %}
             <h5>{{ post.description }}</h5>
             <p>Stars: {{ post.stars }}</p>
-            <p>Type: {{ post.type }}</p>
+            <img src="https://i.gifer.com/5n2c.gif" width=100px height=20px>
+            <p style="color: ">Type: {{ post.type }}</p>
         </div>
     {% endfor %}
 </div>
